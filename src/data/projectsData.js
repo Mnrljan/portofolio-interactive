@@ -23,7 +23,7 @@ const projectsData = [
         mainImage: '/images/porto-v2-1.png',
         shortDescription: 'My personal portfolio showcasing various web development projects with smooth scrolling and animations.',
         longDescription: 'Developed to highlight my skills and projects, this portfolio site emphasizes clean design, smooth navigation using Lenis, and subtle animations powered by GSAP to create an engaging user experience. Implemented a modular component structure for easy scalability and maintenance. This is the website you are currently accessing. Enjoy the show!',
-        technologies: ['React', 'SCSS', 'GSAP', 'Lenis'],
+        technologies: ['React.js', 'CSS3', 'GitHub', 'HTML5', 'JavaScript', 'GSAP', 'Lenis'],
         // projectUrl: '',
         githubUrl: 'https://github.com/Mnrljan/Portofolio-interactive',
         // --- TAMBAH BAGIAN INI ---
@@ -42,7 +42,7 @@ const projectsData = [
         mainImage: '/images/porto-v3-1.png',
         shortDescription: 'My personal portfolio showcasing various web development projects with smooth scrolling and animations.',
         longDescription: 'This is a sophisticated and highly customizable digital wedding invitation web application, designed to provide a modern, interactive, and eco-friendly alternative to traditional paper invitations. Developed with a mobile-first approach, it ensures a seamless and delightful experience for guests across all devices, from smartphones to desktops.',
-        technologies: ['React', 'SCSS', 'GSAP', 'Lenis'],
+        technologies: ['React.js', 'SCSS', 'GSAP', 'Lenis'],
         projectUrl: 'https://wedding-invitations-web.netlify.app/',
         githubUrl: 'https://github.com/Mnrljan/wedding-invitation-web',
         // --- TAMBAH BAGIAN INI ---
