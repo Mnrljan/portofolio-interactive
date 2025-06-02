@@ -1,0 +1,156 @@
+/* src/components/pages/ProjectsPage.css (Revisi untuk Masonry Murni) */
+
+.projects-page {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-color-dark);
+    background-color: var(--background-light);
+    min-height: 100vh;
+    text-align: center;
+}
+
+.projects-page__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    color: var(--acent-color);
+    margin-bottom: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.projects-page__subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+/* --- CSS untuk react-masonry-css --- */
+.photo-gallery-wrapper {
+    width: 100%;
+    padding: 0 1rem;
+    /* Padding horizontal untuk seluruh grid */
+    box-sizing: border-box;
+}
+
+.my-masonry-grid {
+    display: flex;
+    margin-left: -1.5rem;
+    /* Margin negatif untuk mengimbangi padding kolom */
+    width: auto;
+}
+
+.my-masonry-grid_column {
+    padding-left: 1.5rem;
+    /* Padding antar kolom (gap) */
+    background-clip: padding-box;
+}
+
+/* Styling item di dalam kolom Masonry */
+.my-masonry-grid_column>div {
+    margin-bottom: 1.5rem;
+    /* Jarak vertikal antar item dalam kolom */
+}
+
+/* --- END CSS untuk react-masonry-css --- */
+
+
+.gallery-item {
+    background-color: var(--background-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    /* Untuk menengahkan gambar jika ada ruang kosong */
+    flex-direction: column;
+    /* Jika ada konten di dalam item selain gambar */
+    align-items: center;
+    justify-content: center;
+    /* Kunci untuk Masonry Murni: height item tidak perlu fixed */
+    /* height: 250px; // <--- HAPUS BARIS INI */
+    /* Jika Anda punya konten tambahan selain gambar, pastikan tingginya fleksibel */
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item__img {
+    width: 100%;
+    height: auto;
+    /* <--- PENTING: Biarkan tinggi otomatis agar gambar tidak terpotong */
+    object-fit: cover;
+    /* Gambar akan mengisi lebar dan mempertahankan rasio aspek */
+    display: block;
+}
+
+/* --- Opsional: Gaya Overlay atau Caption (jika Anda pakai) --- */
+/* ... (kode overlay/caption dari sebelumnya) ... */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .projects-page {
+        padding: 4rem 1.5rem;
+    }
+
+    .projects-page__title {
+        font-size: 3.5rem;
+    }
+
+    .projects-page__subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+    }
+
+    .my-masonry-grid {
+        margin-left: -1rem;
+    }
+
+    .my-masonry-grid_column {
+        padding-left: 1rem;
+    }
+
+    .my-masonry-grid_column>div {
+        margin-bottom: 1rem;
+    }
+
+    /* gallery-item__img height: auto; */
+}
+
+@media (max-width: 768px) {
+    .projects-page {
+        padding: 5rem 1rem;
+    }
+
+    .projects-page__title {
+        font-size: 2.8rem;
+    }
+
+    .projects-page__subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .my-masonry-grid {
+        margin-left: -0.8rem;
+    }
+
+    .my-masonry-grid_column {
+        padding-left: 0.8rem;
+    }
+
+    .my-masonry-grid_column>div {
+        margin-bottom: 0.8rem;
+    }
+
+    /* gallery-item__img height: auto; */ }

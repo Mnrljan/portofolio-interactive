@@ -1,0 +1,8 @@
+/* src/components/pages/AboutPage.css */
+.page-container.about-page {
+    /* Pastikan class ini ada di div utama AboutPage.js */
+    padding-top: 4.8rem;
+    /* Sesuaikan nilai ini (misalnya 2rem, 3rem, 60px) hingga pas */
+    /* Anda juga bisa menambahkan padding bawah agar ada ruang sebelum footer */
+    /* padding-bottom: 1rem;  */
+}

@@ -1,0 +1,161 @@
+/* src/components/sections/about/ExperienceSection.css */
+.experience-section {
+    padding: 4rem 1.5rem;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.experience-main-title {
+    text-align: center;
+    font-family: 'bebas neue';
+    margin-bottom: 3.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.timeline-layout-container {
+    position: relative;
+    /* Konteks untuk positioning .timeline-bar dan .timeline-items-wrapper */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    /* Padding atas/bawah untuk sedikit ruang bagi ujung garis */
+}
+
+.timeline-bar {
+    position: absolute;
+    left: 20px;
+    /* Posisi horizontal garis (sesuaikan dengan .timeline-marker dan .timeline-item padding) */
+    top: 5px;
+    /* Mulai sedikit di bawah, untuk estetika dengan marker item pertama */
+    bottom: 5px;
+    /* Akhiri sedikit di atas, untuk estetika dengan marker item terakhir */
+    width: 3px;
+    background-color: var(--accent-color);
+    z-index: 0;
+    /* Di belakang marker */
+    /* Properti 'originY: 0' untuk animasi scaleY diatur di JSX via style prop */
+}
+
+.timeline-items-wrapper {
+    position: relative;
+    /* Agar z-index bekerja jika diperlukan, dan menjaga alur normal */
+    z-index: 1;
+    /* Pastikan item di atas garis jika ada overlap aneh (jarang) */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 60px;
+    /* Ruang untuk marker dan jarak dari garis */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 20px;
+    /* Sejajarkan dengan .timeline-bar */
+    top: 4px;
+    /* Penyesuaian vertikal */
+    transform: translateX(-50%);
+    /* Pusatkan marker di atas garis */
+    width: 18px;
+    height: 18px;
+    background-color: var(--secondary-color);
+    border: 3px solid var(--background-light);
+    /* Ganti var(--background-light) dengan warna bg section jika beda */
+    border-radius: 50%;
+    z-index: 2;
+    /* Di atas .timeline-bar */
+    box-shadow: 0 0 0 4px var(--accent-color);
+}
+
+.timeline-item-content {
+    background-color: var(--background-light);
+    color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-item-content::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--accent-color) transparent transparent;
+}
+
+.experience-company {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.experience-role-period {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.experience-role {
+    font-weight: bold;
+}
+
+.experience-period {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--secondary-color);
+}
+
+.experience-description {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Penyesuaian Responsif */
+@media (max-width: 768px) {
+    .experience-main-title {
+        font-size: 2rem;
+    }
+
+    .timeline-bar {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        left: 10px;
+        width: 16px;
+        height: 16px;
+        box-shadow: 0 0 0 3px var(--primary-color);
+    }
+
+    .timeline-item-content::before {
+        left: -8px;
+        border-width: 8px 8px 8px 0;
+    }
+
+    .experience-company {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-description {
+        font-size: 0.95rem;
+    } }

@@ -1,0 +1,21 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    /* Ukuran font yang sangat besar untuk judul */
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+    /* Tambah margin bawah agar tidak terlalu dekat dengan subjudul */
+    line-height: 1.1;
+    /* Sesuaikan line-height jika perlu */
+}

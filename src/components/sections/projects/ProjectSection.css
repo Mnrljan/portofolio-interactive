@@ -1,0 +1,170 @@
+.project-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto 5rem;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    /* Tambahkan overflow hidden agar gambar parallax tidak keluar dari batas section */
+    overflow: hidden;
+}
+
+.project-section:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk layout bergantian */
+.project-section--right-image {
+    flex-direction: row-reverse;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+}
+
+.project-section--right-image .project-section__title {
+    color: var(--primary-color);
+}
+
+.project-section__image-wrapper {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Penting untuk parallax agar gambar tidak keluar dari wrapper-nya */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Posisi relatif untuk elemen anak yang di-parallax (jika menggunakan position absolute pada gambar) */
+    position: relative;
+}
+
+.project-section__image {
+    width: 100%;
+    height: 100%;
+    /* Agar gambar mengisi wrapper dan parallax bekerja */
+    display: block;
+    object-fit: cover;
+    /* Tambahkan transform style preserve-3d jika ada masalah dengan z-index atau rendering */
+    /* transform-style: preserve-3d; */
+}
+
+.project-section__content {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.project-section__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--accent-color);
+}
+
+.project-section--right-image .project-section__title {
+    color: var(--primary-color);
+}
+
+.project-section__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.project-section__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.project-section__tech-tag {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.project-section--right-image .project-section__tech-tag {
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+}
+
+.project-section__actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-section__actions .button {
+    min-width: 180px;
+    margin: 0;
+}
+
+.project-section__screenshots-preview {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* Jarak antara galeri dan teknologi */
+    text-align: center;
+    /* Untuk menengahkan judul jika ingin */
+}
+
+.project-section__screenshots-title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Sesuaikan warna judul screenshot untuk dark background section */
+.project-section--right-image .project-section__screenshots-title {
+    color: var(--text-color-light);
+}
+
+
+/* Responsif untuk Mobile */
+@media (max-width: 992px) {
+    .project-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 1rem;
+    }
+
+    .project-section--right-image {
+        flex-direction: column;
+    }
+
+    .project-section__image-wrapper,
+    .project-section__content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .project-section__title {
+        font-size: 2.5rem;
+    }
+
+    .project-section__description {
+        font-size: 1rem;
+    }
+
+    .project-section__technologies {
+        justify-content: center;
+    }
+
+    .project-section__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-section__actions .button {
+        width: 90%;
+        max-width: 300px;
+    } }

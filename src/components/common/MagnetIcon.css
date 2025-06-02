@@ -1,0 +1,34 @@
+/* src/components/common/MagnetIcon.css */
+.magnet-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    /* Optional: background-color: rgba(255,255,255,0.05); */
+}
+
+.magnet-icon-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Styling untuk ikon yang dirender oleh React Icons (SVG) */
+.social-icon {
+    display: block;
+    /* Pastikan SVG ikon sebagai block element */
+    /* Warna dan ukuran akan diatur via props di JS, tapi ini fallback */
+    color: currentColor;
+    /* Agar warna ikon mewarisi dari parent jika diatur via CSS */
+    transition: transform 0.3s ease;
+    /* Transisi untuk ikon itu sendiri jika ada hover/scale */
+}
+
+/* Optional: Animasi scale pada ikon saat hover (di dalam magnet-wrapper) */
+.magnet-icon-wrapper:hover .social-icon {
+    transform: scale(1.1);
+}

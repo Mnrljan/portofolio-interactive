@@ -1,0 +1,93 @@
+/* src/components/common/MobileSocialFAB.css */
+
+/* Sembunyikan FAB container di Desktop */
+.mobile-fab-wrapper {
+    display: none;
+    position: fixed;
+    /* Penting agar FAB tetap di tempatnya saat scroll */
+    bottom: 30px;
+    /* Jarak dari bawah layar */
+    right: 30px;
+    /* Jarak dari kanan layar */
+    z-index: 1000;
+    /* Pastikan di atas konten lain */
+    flex-direction: column;
+    /* Mengatur item di dalamnya vertikal */
+    align-items: flex-end;
+    /* Rata kanan di dalam wrapper */
+    /* gap: 15px; */
+    /* Jarak antara FAB dan list ikon akan diatur oleh bottom pada list */
+}
+
+.mobile-fab-button {
+    width: 60px;
+    /* Ukuran FAB */
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Warna FAB */
+    color: var(--text-color-dark);
+    /* Warna ikon di FAB */
+    border: none;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    /* Ukuran teks X/Share jika pakai teks */
+}
+
+.mobile-fab-button span {
+    display: flex;
+    /* Memastikan ikon terpusat di dalam button */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Daftar ikon sosial yang muncul dari FAB */
+.mobile-social-icons-list {
+    position: absolute;
+    bottom: 75px;
+    /* <--- Posisikan di atas FAB (FAB height 60px + 15px gap) */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    /* Ikon tersusun vertikal */
+    gap: 15px;
+    /* Jarak antar ikon di list */
+    align-items: flex-end;
+    /* Rata kanan sesuai FAB */
+    /* background-color: var(--background-dark); */
+    /* Opsional: background untuk list ikon */
+    /* padding: 15px; */
+    /* Opsional: padding untuk list ikon */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+/* Ganti gaya MagnetIcon's wrapper saat digunakan di daftar ini */
+.mobile-social-icons-list .magnet-icon-wrapper {
+    width: 50px;
+    /* Ukuran area magnet ikon di list */
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Latar belakang transparan ringan untuk ikon list */
+    border-radius: 50%;
+    /* Bulat */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+.mobile-social-icons-list .magnet-icon-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Tampilkan FAB container hanya di Mobile */
+@media (max-width: 768px) {
+    .mobile-fab-wrapper {
+        display: flex;
+        /* Tampilkan FAB container di mobile */
+    }
+}

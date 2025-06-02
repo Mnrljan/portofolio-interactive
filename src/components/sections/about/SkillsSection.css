@@ -1,0 +1,102 @@
+/* src/components/sections/about/SkillsSection.css - Versi Kategori Mengembang */
+.skills-section-expanding-layout {
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    margin-top: 0;
+    /* background-color: var(--background-light); (Sesuaikan tema) */
+}
+
+.skills-main-title-expanding {
+    text-align: center;
+    font-family: 'bebas neue', sans-serif;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Jarak antar item kategori */
+}
+
+.category-item {
+    background-color: transparent;
+    /* Latar belakang item kategori */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Penting agar konten yang keluar masuk terlihat rapi */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    /* Warna default header */
+    color: var(--text-color-light);
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    /* Transisi warna latar header */
+}
+
+.category-header:hover {
+    background-color: var(--accent-color);
+    /* Warna saat hover (atau bisa sama dengan saat terbuka) */
+}
+
+.category-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    /* Ukuran ikon chevron */
+}
+
+.skill-list-expanding {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* background-color: var(--background-dark); */
+    /* Latar belakang daftar skill, bisa beda tipis */
+}
+
+.skill-list-item-expanding {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--secondary-color);
+    /* Garis pemisah antar skill */
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    /* background-color: var(--background-dark); (Jika ingin beda dari ul) */
+}
+
+.skill-list-item-expanding:first-child {
+    border-top: none;
+    /* Hapus border atas untuk item pertama */
+}
+
+/* Penyesuaian untuk mobile */
+@media (max-width: 768px) {
+    .skills-main-title-expanding {
+        font-size: 2rem;
+    }
+
+    .category-header {
+        font-size: 1.1rem;
+        padding: 0.9rem 1.25rem;
+    }
+
+    .skill-list-item-expanding {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.25rem;
+    }
+}

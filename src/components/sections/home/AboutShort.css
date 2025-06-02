@@ -1,0 +1,99 @@
+.about-short {
+    display: flex;
+    justify-content: space-between;
+    /* Untuk memisahkan kiri dan kanan */
+    align-items: center;
+    padding: 100px 5%;
+    min-height: 50vh;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-short-left {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+    margin-left: 8rem;
+}
+
+.about-short-text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+.about-short-right {
+    flex: 0 0 auto;
+    /* Kolom kanan tidak meluas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12rem;
+    /* position: relative;  <-- Tambahkan ini jika diperlukan untuk positioning di masa depan */
+}
+
+.about-circular-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(167, 167, 167);
+    border: 50px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    /* Pastikan transisi ini ada */
+}
+
+.about-circular-button:hover {
+    transform: scale(1.1);
+    border: 4px solid var(--secondary-color);
+        /* Efek pembesaran saat hover */
+}
+
+.about-circular-button-text {
+    font-family: 'Exo 2';
+    font-weight: 600;
+    font-size: 1.8rem;
+    color:aliceblue;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .about-short {
+        flex-direction: column;
+        /* Mengubah layout menjadi kolom (atas-bawah) */
+        text-align: center;
+        /* Memusatkan teks */
+        padding: 50px 20px;
+        gap: 30px;
+        /* Jarak antara elemen atas-bawah */
+    }
+
+    .about-short-left {
+        max-width: 100%;
+        margin-left: 0.1rem;
+        /* Membiarkan teks memenuhi lebar */
+    }
+
+    .about-short-text {
+        font-size: 1.2rem;
+    }
+
+    .about-short-right {
+        margin-right: 0.1rem;
+    }
+
+    .about-circular-button-text {
+        font-size: 1.5rem;
+    }
+}

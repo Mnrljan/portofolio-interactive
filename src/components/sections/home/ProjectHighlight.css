@@ -1,0 +1,245 @@
+/* src/components/sections/home/ProjectHighlight.css */
+
+/* Styling Bagian Sorotan Proyek (induk) */
+.project-highlight {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--text-color-dark);
+    margin-bottom: 80px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-title:hover {
+    transform: scale(1.05);
+}
+
+.project-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    margin-top: 50px;
+}
+
+/* === Styling Layout 2 Kolom untuk ProjectFeatureItem === */
+.project-feature-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Untuk alternating layout: gambar di kiri */
+.project-feature-container.image-left {
+    flex-direction: row;
+    /* Gambar di kiri, konten di kanan */
+}
+
+/* Untuk alternating layout: gambar di kanan */
+.project-feature-container.image-right {
+    flex-direction: row-reverse;
+    /* Konten di kiri, gambar di kanan */
+}
+
+.project-column {
+    flex: 1;
+    max-width: 500px;
+    /* Lebar kolom */
+    position: relative;
+    z-index: 1;
+    /* Background dan padding tambahan jika ingin kolom terlihat terpisah */
+}
+
+.project-description-column {
+    text-align: left;
+    /* Teks rata kiri */
+    /* Pastikan paragraf juga diatur text-align: left */
+}
+
+/* --- Tambahkan Styling untuk Konten di dalam Kolom Deskripsi --- */
+.project-card-description {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    text-align: left;
+    /* Pastikan rata kiri */
+}
+
+.project-card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    /* Jarak antara tech tags dan tombol */
+    justify-content: flex-start;
+    /* Tech tags rata kiri */
+}
+
+.tech-item {
+    /* Kelas baru untuk tech tags */
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- */
+
+
+/* Frame Gambar */
+.project-image-frame {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.project-feature-image {
+    width: 100%;
+    height: 120%;
+    /* Untuk ruang parallax */
+    object-fit: cover;
+    display: block;
+}
+
+.project-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    /* Lebih besar */
+    color: var(--text-color-dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Jarak dari deskripsi */
+    text-align: left;
+    /* Judul rata kiri */
+}
+
+/* Tombol Lihat Proyek */
+.project-feature-container .button.primary {
+    /* Lebih spesifik */
+    width: auto;
+    padding: 12px 30px;
+    font-size: 1rem;
+    display: inline-block;
+    /* Agar bisa di-align */
+    margin-top: 0;
+    /* Hapus margin-top otomatis */
+}
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    .project-highlight {
+        padding: 60px 20px;
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        display: block;
+        max-width: 90%;
+        margin: 0 auto 40px auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .project-features-list {
+        gap: 60px;
+    }
+
+    .project-feature-container {
+        flex-direction: column;
+        /* Selalu kolom di mobile */
+        gap: 40px;
+        text-align: center;
+        /* Konten di tengah di mobile */
+        padding: 0;
+        /* Hapus padding jika perlu */
+    }
+
+    /* Di mobile, baik image-left maupun image-right akan menjadi column */
+    .project-feature-container.image-left,
+    .project-feature-container.image-right {
+        flex-direction: column;
+    }
+
+    .project-description-column,
+    .project-image-column {
+        max-width: 100%;
+        text-align: center;
+        /* Konten di tengah di mobile */
+    }
+
+    .project-card-title {
+        font-size: 2rem;
+        /* Sesuaikan ukuran font */
+        text-align: center;
+        /* Judul di tengah di mobile */
+        margin-bottom: 10px;
+    }
+
+    .project-card-description {
+        font-size: 0.95rem;
+        text-align: center;
+        /* Deskripsi di tengah di mobile */
+    }
+
+    .project-card-tech {
+        justify-content: center;
+        /* Tech item di tengah di mobile */
+    }
+
+    .project-image-frame {
+        height: 250px;
+    }
+}
+
+/* Penyesuaian untuk layar sangat kecil */
+@media (max-width: 480px) {
+    .project-title {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .project-card-title {
+        font-size: 1.8rem;
+    }
+
+    .project-card-description {
+        display: none;
+    }
+
+    .tech-item {
+        display: none;
+    }
+
+    .project-image-frame {
+        height: 200px;
+    }
+
+    .project-feature-container .button.primary {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}

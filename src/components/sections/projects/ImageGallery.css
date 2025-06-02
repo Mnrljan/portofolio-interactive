@@ -1,0 +1,134 @@
+/* src/sections/projects/ImageGallery.css (Revisi Total) */
+
+.image-gallery-container {
+    display: flex;
+    flex-direction: column;
+    /* Setiap item akan menumpuk vertikal */
+    gap: 3.5rem;
+    /* Jarak antara setiap item screenshot */
+    padding: 0 1rem;
+    /* Padding horizontal agar tidak terlalu menempel di tepi */
+    max-width: 900px;
+    /* Batasi lebar container utama */
+    margin: 0 auto;
+    /* Tengah container */
+}
+
+.screenshot-item {
+    background-color: var(--background-dark);
+    /* Latar belakang default */
+    color: var(--text-color-light);
+    border-radius: 15px;
+    /* Sudut bulat untuk kontainer */
+    overflow: hidden;
+    /* Penting untuk gambar dan shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Shadow yang menonjol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transisi hover */
+    /* padding: 1.5rem; */
+    /* Padding internal untuk gambar di dalam kontainer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Jika ada teks caption di masa depan */
+}
+
+.screenshot-item:hover {
+    transform: translateY(-5px);
+    /* Sedikit naik saat hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    /* Shadow lebih kuat saat hover */
+}
+
+.screenshot-item__img {
+    width: 100%;
+    height: 100%;
+    /* Biarkan tinggi gambar mengikuti rasio aspek */
+    max-height: 550px;
+    /* Batasi tinggi maksimal gambar agar tidak terlalu panjang */
+    object-fit: cover;
+    /* Penting! Gambar akan diskalakan untuk muat di dalam kontainer */
+    display: block;
+    border-radius: 10px;
+    /* Sudut bulat untuk gambar itu sendiri */
+    /* Jika ada masalah kinerja dengan object-fit: contain, bisa coba object-fit: cover dan berikan height fixed */
+}
+
+
+/* --- Varian Kontainer Screenshot (2 Gaya yang Anda Minta) --- */
+
+/* Varian 1: "full-bleed" (tanpa padding, gambar mengisi penuh edge-to-edge di dalam kontainer) */
+.screenshot-item--full-bleed {
+    padding: 0;
+    /* Hapus padding internal */
+    background-color: transparent;
+    /* Latar belakang transparan */
+    box-shadow: none;
+    /* Hapus shadow */
+    border-radius: 0;
+    /* Hapus border radius jika ingin edge-to-edge */
+}
+
+.screenshot-item--full-bleed .screenshot-item__img {
+    border-radius: 0;
+    /* Pastikan gambar juga tanpa border-radius */
+    max-height: 600px;
+    /* Bisa lebih tinggi untuk full-bleed */
+}
+
+/* Varian 2: "card" (ini adalah gaya default, bisa Anda kustomisasi lebih lanjut) */
+/* Misal, tambahkan border, ubah warna latar belakang, atau gaya shadow */
+.screenshot-item--card {
+    background-color: var(--background-light);
+    /* Latar belakang terang */
+    color: var(--text-color-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Shadow lebih ringan */
+    border: 1px solid var(--secondary-color);
+    /* Contoh border */
+}
+
+.screenshot-item--card .screenshot-item__img {
+    border-radius: 8px;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .image-gallery-container {
+        gap: 3rem;
+    }
+
+    .screenshot-item {
+        /* padding: 1rem; */
+        border-radius: 10px;
+    }
+
+    .screenshot-item__img {
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-gallery-container {
+        gap: 2.5rem;
+        padding: 0;
+        
+    }
+
+    .screenshot-item {
+        /* padding: 0.8rem; */
+        border-radius: 8px;
+        gap: 1rem;
+    }
+
+    .screenshot-item__img {
+        max-height: 350px;
+    }
+
+    /* Varian full-bleed di mobile bisa jadi lebih besar */
+    .screenshot-item--full-bleed .screenshot-item__img {
+        max-height: 400px;
+    } }

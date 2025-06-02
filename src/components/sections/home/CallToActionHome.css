@@ -1,0 +1,99 @@
+/* src/components/sections/home/CallToActionHome.css */
+
+.cta-home {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    /* Tinggi minimum bagian CTA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Penting untuk parallax */
+    text-align: center;
+    background-color: transparent;
+    /* Latar belakang transparan */
+    /* padding: 80px 20px; */
+    /* Padding vertikal dan horizontal */
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    /* Batasi lebar konten */
+    width: 100%;
+    display: flex;
+    /* Gunakan flex untuk menumpuk teks dan tombol */
+    flex-direction: column;
+    align-items: center;
+    /* Pusatkan secara horizontal */
+    gap: 40px;
+    /* Jarak antara teks dan tombol */
+}
+
+.cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--text-color-dark);
+    line-height: 1.2;
+    margin: 0;
+    /* Hapus margin default */
+}
+
+/* Styling Tombol Bulat (tetap 100x100px) */
+.cta-main-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(167, 167, 167);
+    border: 50px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.cta-main-button:hover {
+    border: 4px solid var(--secondary-color);
+}
+
+.cta-main-button-text {
+    font-family: 'exo 2';
+    font-size: 1.4rem;
+    color: aliceblue;
+    font-weight: 800;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .cta-home {
+        min-height: 400px;
+        padding: 60px 15px;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .cta-content {
+        gap: 30px;
+    }
+
+    .cta-main-button {
+        width: 80px;
+        /* Ukuran tombol lebih kecil di mobile */
+        height: 80px;
+        border: 40px solid var(--secondary-color);
+    }
+
+    .cta-main-button-text {
+        font-size: 1.5rem;
+    }
+}

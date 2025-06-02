@@ -1,0 +1,139 @@
+/* src/components/sections/about/IntroSection.css */
+.intro-section {
+    display: flex;
+    align-items: center;
+    /* Vertikal tengah jika tinggi berbeda */
+    justify-content: center;
+    /* Horisontal tengah untuk grup teks & gambar */
+    gap: 3rem;
+    /* Jarak antara blok teks dan blok gambar, sesuaikan */
+    padding: 2rem 1rem;
+    /* Padding vertikal, dan padding horizontal untuk layar kecil */
+    max-width: 1200px;
+    /* Lebar maksimum untuk keseluruhan bagian intro */
+    margin: 0 auto;
+    /* Membuat bagian intro ini center di halaman */
+}
+
+.intro-content {
+    /* Blok untuk teks */
+    flex-basis: 500px;
+    /* Usahakan lebar awal 500px */
+    max-width: 500px;
+    /* Batasi lebar maksimum teks menjadi 500px */
+    flex-grow: 0;
+    /* Jangan biarkan blok teks membesar melebihi max-width */
+    flex-shrink: 1;
+    /* Biarkan blok teks mengecil jika ruang tidak cukup */
+    /* Properti transform untuk parallax akan ditambahkan nanti dengan JS */
+}
+
+.intro-content p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    /* Anda bisa sesuaikan ukuran font jika perlu */
+    /* text-align: left; default, biarkan jika tidak ingin teks rata tengah di dalam bloknya */
+}
+
+.intro-content p strong {
+    color: var(--text-color-dark);
+    font-weight: 600;
+}
+
+.profile-image-container {
+    /* Blok utama untuk gambar di sisi kanan */
+    flex-basis: 350px;
+    max-width: 350px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    /* Untuk memastikan window di tengah jika ada pengaturan aneh */
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image-parallax-window {
+    /* Jendela/Pembungkus Gambar */
+    width: 100%;
+    /* Lebar mengikuti .profile-image-container */
+    height: 400px;
+    /* TENTUKAN TINGGI JENDELA - Sesuaikan ini! */
+    overflow: hidden;
+    /* PENTING: Ini yang membuat efek masking */
+    border-radius: 12px;
+    /* Radius sudut untuk jendela */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Bayangan pada jendela */
+    position: relative;
+    /* Diperlukan jika gambar di dalamnya diposisikan absolute */
+}
+
+.profile-image.profile-image-parallax-content {
+    /* Gambar di dalam Jendela */
+    width: 100%;
+    /* Gambar mengisi lebar jendela */
+    /* Gambar harus lebih tinggi dari jendela agar ada ruang untuk bergerak */
+    /* Kita akan menggunakan scale untuk memperbesar gambar */
+    transform: scale(1.2);
+    /* PERBESAR GAMBAR - Sesuaikan skala ini */
+    object-fit: cover;
+    /* Pastikan gambar menutupi area tanpa distorsi */
+    /* Hapus border-radius dari sini jika sudah ada di window */
+    /* transition: transform 0.1s ease-out; /* Transisi halus jika pergerakan terasa patah-patah (opsional) */
+    /* Posisi awal Y akan diatur oleh JavaScript, atau bisa di set di sini jika perlu */
+}
+
+/* Penyesuaian untuk layar yang lebih kecil (tablet dan mobile) */
+@media (max-width: 900px) {
+
+    /* Breakpoint saat teks+gambar mulai terasa sempit berdampingan */
+    .intro-section {
+        flex-direction: column;
+        /* Susun vertikal */
+        text-align: center;
+        /* Teks jadi rata tengah saat susun vertikal */
+    }
+
+    .intro-content {
+        order: 2;
+        /* Teks di bawah gambar */
+        /* max-width: 500px tetap berlaku, tapi akan di tengah karena text-align: center di .intro-section */
+    }
+
+    .profile-image-container {
+        order: 1;
+        /* Gambar di atas teks */
+        margin-bottom: 2rem;
+        /* Jarak bawah gambar saat susun vertikal */
+        width: 60%;
+        /* Sesuaikan ukuran gambar di mobile */
+        max-width: 280px;
+        /* Batasi maksimumnya */
+    }
+
+    .profile-image-parallax-window {
+        height: 320px;
+        /* Sesuaikan tinggi jendela untuk tablet */
+    }
+}
+
+@media (max-width: 540px) {
+    .intro-content {
+        /* /* Jika max-width: 500px terlalu lebar untuk layar sangat kecil,  */
+        max-width: 80%;
+        justify-content: baseline;
+    }
+
+    .profile-image-container {
+        width: 70%;
+        max-width: 250px;
+    }
+
+    .profile-image-parallax-window {
+        height: 280px;
+        /* Sesuaikan tinggi jendela untuk mobile kecil */
+    }
+}

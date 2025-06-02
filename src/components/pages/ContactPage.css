@@ -1,0 +1,312 @@
+/* src/components/pages/ContactPageV2.css */
+
+.contact-page-v2 {
+    padding: 6rem 1.5rem;
+    /* Lebih banyak padding vertikal */
+    max-width: 1000px;
+    /* Lebar maksimal lebih besar */
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-color-dark);
+    /* Tidak ada display: flex atau height: 100% di sini yang bisa mengganggu global layout */
+}
+
+/* --- Titles & Intro --- */
+.contact-page-v2__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    /* Lebih besar */
+    color: var(--accent-color);
+    /* Warna yang lebih bold untuk judul */
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.contact-page-v2__intro-text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    /* Lebih besar */
+    color: var(--secondary-color);
+    margin-bottom: 4rem;
+    /* Jarak lebih jauh dari section berikutnya */
+    line-height: 1.6;
+    max-width: 700px;
+    /* Batasi lebar teks agar mudah dibaca */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Info Section (Cards) --- */
+.contact-page-v2__info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsif grid 3 kolom */
+    gap: 2rem;
+    margin-bottom: 5rem;
+    /* Jarak ke section sosial */
+    padding: 0 1rem;
+    /* Padding horizontal */
+}
+
+.contact-page-v2__contact-card {
+    background-color: var(--background-light);
+    /* Latar belakang gelap */
+    color: var(--text-color-dark);
+    padding: 2.5rem 1.5rem;
+    border-radius: 15px;
+    /* Lebih bulat */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    /* Shadow lebih kuat */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Tengah konten kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page-v2__contact-card:hover {
+    transform: translateY(-8px);
+    /* Sedikit naik */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    /* Shadow lebih dramatis */
+}
+
+.contact-page-v2__icon {
+    font-size: 3rem;
+    /* Ikon lebih besar */
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+}
+
+.contact-page-v2__card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.contact-page-v2__link,
+.contact-page-v2__text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-page-v2__link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* --- Social Section --- */
+.contact-page-v2__social-section {
+    padding: 0 1rem;
+}
+
+.contact-page-v2__social-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.contact-page-v2__social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Jarak antar link sosial */
+}
+
+.contact-page-v2__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: var(--secondary-color);
+    /* Latar belakang untuk link sosial */
+    color: var(--text-color-light);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    /* Bentuk pil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow ringan */
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-page-v2__social-link:hover {
+    background-color: var(--background-light);
+    /* Warna hover */
+    color: var(--accent-color);
+    /* Teks gelap saat hover */
+    transform: translateY(-3px);
+}
+
+.contact-page-v2__social-link:hover .contact-page-v2__social-icon {
+    color: var(--accent-color);
+    /* Ikon gelap saat hover */
+}
+
+.contact-page-v2__social-icon {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    /* Warna ikon default */
+}
+
+
+/* --- Form Section --- */
+.contact-page-v2__form-section {
+    background-color: var(--background-light);
+    /* Latar belakang terang untuk form */
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    /* Batasi lebar form agar tidak terlalu lebar di desktop */
+    margin: 0 auto;
+    /* Tengah form */
+    text-align: left;
+}
+
+.contact-page-v2__form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    color: var(--accent-color);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.contact-page-v2__form-group {
+    margin-bottom: 1.8rem;
+}
+
+.contact-page-v2__form-group label {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-color-dark);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.contact-page-v2__form-group input[type="text"],
+.contact-page-v2__form-group input[type="email"],
+.contact-page-v2__form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    /* Lebih bulat */
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-color-dark);
+    background-color: #ffffff;
+    /* Putih murni untuk input */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-page-v2__form-group input[type="text"]:focus,
+.contact-page-v2__form-group input[type="email"]:focus,
+.contact-page-v2__form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(138, 180, 241, 0.3);
+    /* Glow yang lebih jelas */
+    outline: none;
+}
+
+.contact-page-v2__form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+    /* Lebih tinggi */
+}
+
+/* Tombol Send Message */
+.contact-page-v2__form .button.primary {
+    width: auto;
+    margin: 2.5rem auto 0;
+    padding: 16px 45px;
+    /* Tombol lebih besar */
+    font-size: 1.3rem;
+    /* Font lebih besar */
+    display: block;
+    border-radius: 10px;
+    /* Lebih bulat */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .contact-page-v2 {
+        padding: 4rem 1rem;
+    }
+
+    .contact-page-v2__title {
+        font-size: 3.5rem;
+    }
+
+    .contact-page-v2__intro-text {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .contact-page-v2__info-section {
+        grid-template-columns: 1fr;
+        /* Satu kolom di mobile */
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .contact-page-v2__contact-card {
+        padding: 2rem 1rem;
+    }
+
+    .contact-page-v2__icon {
+        font-size: 2.5rem;
+    }
+
+    .contact-page-v2__card-title {
+        font-size: 1.6rem;
+    }
+
+    .contact-page-v2__social-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-page-v2__social-links {
+        flex-direction: column;
+        /* Tumpuk link sosial di mobile */
+        gap: 1rem;
+    }
+
+    .contact-page-v2__social-link {
+        width: 90%;
+        /* Ambil lebar penuh */
+        max-width: 300px;
+        margin: 0 auto;
+        /* Tengah */
+    }
+
+    .contact-page-v2__form-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .contact-page-v2__form-title {
+        font-size: 2.8rem;
+    }
+
+    .contact-page-v2__form-group label,
+    .contact-page-v2__form-group input,
+    .contact-page-v2__form-group textarea {
+        font-size: 1rem;
+    }
+
+    .contact-page-v2__form .button.primary {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+        width: 90%;
+        max-width: 280px;
+    }
+}

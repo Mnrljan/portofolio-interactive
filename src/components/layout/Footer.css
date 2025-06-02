@@ -1,0 +1,79 @@
+/* src/components/layout/Footer.css */
+
+.footer {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    padding: 5px 0;
+    /* Sesuaikan padding vertikal */
+    text-align: center;
+    position: relative;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* <--- PENTING: Padding horizontal agar tidak mepet tepi */
+    display: flex;
+    flex-direction: row;
+    /* <--- UBAH: Layout menjadi satu baris */
+    justify-content: space-between;
+    /* <--- UBAH: Teks di kiri/tengah, ikon di kanan */
+    align-items: center;
+    /* <--- PENTING: Pusatkan secara vertikal */
+    /* Hapus gap di sini, karena gap akan diatur di social-links */
+}
+
+.footer-copyright {
+    /* Gaya untuk teks hak cipta */
+    margin-left: 10rem;
+    /* Hapus margin default p */
+    font-size: 0.9rem;
+    flex-grow: 1;
+    /* Agar mengambil ruang lebih untuk pushes social links right */
+    text-align: center;
+    /* Pusatkan teks hak cipta */
+    padding-left: 80px;
+    /* Offset untuk menyeimbangkan visual dengan ikon di kanan */
+    /* Ini adalah penyesuaian visual, sesuaikan 80px ini */
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    /* Jarak antar ikon media sosial */
+    justify-content: flex-end;
+    /* Ikon rata kanan di dalam div-nya */
+    align-items: center;
+    flex-shrink: 0;
+    /* Penting: agar ikon tidak menyusut saat teks panjang */
+}
+
+/* Responsif Footer */
+@media (max-width: 768px) {
+    .footer {
+        /* padding: 30px 0; */
+    }
+
+    .footer .container {
+        flex-direction: column;
+        /* <--- UBAH: Kembali ke kolom di mobile */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* Jarak antar elemen di mobile */
+    }
+
+    .footer-copyright {
+        font-size: 1rem;
+        padding-left: 0;
+        margin-left: 0;
+        /* Hapus offset di mobile */
+        text-align: center;
+    }
+
+    .social-links {
+        display: none;
+    }
+}

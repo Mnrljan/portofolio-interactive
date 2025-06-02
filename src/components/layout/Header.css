@@ -1,0 +1,150 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: transparent;
+    /* Awalnya transparan */
+    z-index: 1000;
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.header.scrolled {
+    background-color: rgba(204, 204, 204, 0.9);
+    /* Latar belakang putih semi-transparan untuk efek blur */
+    backdrop-filter: blur(10px);
+    /* Efek blur (mungkin tidak didukung di semua browser) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    /* Untuk memusatkan gambar */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    /* Efek hover scale */
+    color: var(--text-color-dark);
+    /* Fallback untuk teks jika gambar tidak ada */
+}
+
+/* Efek hover pada Logo */
+.logo:hover {
+    transform: scale(1.1);
+    /* Pembesaran saat hover */
+}
+
+.logo-image {
+    height: 65px;
+    /* Tinggi gambar logo */
+    width: auto;
+    /* Jaga rasio aspek */
+    max-width: 150px;
+    /* Batasi lebar maksimal */
+    display: block;
+}
+
+.header.scrolled .logo {
+    color: var(--text-color-dark);
+    /* Warna logo saat di-scroll */
+}
+
+.hamburger {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    z-index: 1001;
+    transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    padding-top: 2px;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color-dark);
+    /* Warna bar awal */
+    transition: all 0.3s ease-in-out;
+}
+
+.header.scrolled .hamburger .bar {
+    background-color: var(--text-color-dark);
+    /* Warna bar saat di-scroll */
+}
+
+/* Overlay Menu */
+.overlay-menu {
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    /* Latar belakang gelap overlay */
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-nav {
+    text-align: center;
+}
+
+.overlay-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay-item {
+    margin: 30px 0;
+}
+
+.overlay-link {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    /* Ukuran font besar untuk navigasi overlay */
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: color 0.6s ease;
+}
+
+.overlay-link:hover {
+    color: var(--primary-color);
+}
+
+/* Media query untuk tampilan mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Tampilkan hamburger di mobile */
+    }
+
+    .nav-menu {
+        display: none;
+        /* Sembunyikan menu default di mobile */
+    }
+}
+
+/* Media query untuk tampilan desktop */
+/* @media (min-width: 769px) */
