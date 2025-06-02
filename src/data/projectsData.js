@@ -41,7 +41,7 @@ const projectsData = [
         thumbnail: '/images/project2-thumbnail.jpg',
         mainImage: '/images/porto-v3-1.png',
         shortDescription: 'My personal portfolio showcasing various web development projects with smooth scrolling and animations.',
-        longDescription: 'This is a sophisticated and highly customizable digital wedding invitation web application, designed to provide a modern, interactive, and eco-friendly alternative to traditional paper invitations. Developed with a mobile-first approach, it ensures a seamless and delightful experience for guests across all devices, from smartphones to desktops.',
+        longDescription: 'This is a sophisticated and highly customizable digital wedding invitation web application, designed to provide a modern, interactive, and eco-friendly alternative to traditional paper invitations. Developed with a mobile-first approach, it ensures a seamless and delightful experience for guests across all devices, from smartphones to desktops. Btw congrats on your wedding!',
         technologies: ['React.js', 'CSS3', 'GitHub', 'Firebase', 'HTML5', 'JavaScript'],
         projectUrl: 'https://wedding-invitations-web.netlify.app/',
         githubUrl: 'https://github.com/Mnrljan/wedding-invitation-web',
